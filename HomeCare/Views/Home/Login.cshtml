@@ -1,16 +1,16 @@
-﻿
+﻿@model HomeCare.Models.User
 @{
     ViewBag.Title = "Login";
 }
 
 <h2>Login</h2>
 
-<form role="form">
+<form role="form" method="post">
     <div class="form-group">
         <label class="control-label" for="email">Email address</label>
-        <input type="email" class="form-control" id="email" placeholder="Enter email">
+        <input type="email" class="form-control" id="email" name="Email" placeholder="Enter email">
         <label class="control-label" for="password">Password</label>
-        <input type="password" class="form-control" id="password" placeholder="Enter password">
+        <input type="password" class="form-control" id="password" name="Password" placeholder="Enter password">
     </div>
     <div class="checkbox">
         <label>

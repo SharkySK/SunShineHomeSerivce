@@ -43,7 +43,6 @@ namespace HomeCare.Database
             try
             {
                 connection.Open();
-                Debug.WriteLine("Connected!");
                 return true;
             }
             catch (MySqlException ex)

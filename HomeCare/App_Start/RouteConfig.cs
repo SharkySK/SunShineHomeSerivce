@@ -19,8 +19,14 @@ namespace HomeCare
                 defaults: new { controller = "Home", action = "Login", id = UrlParameter.Optional }
                 );
             routes.MapRoute(
+              name: "Admin",
+               url: "{controller}/{action}/{id}",
+               defaults: new { controller = "Home", action = "Login", id = UrlParameter.Optional }
+          );
+
+            routes.MapRoute(
                 name: "Default",
-                url: "{action}/{id}",
+                url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Login", id = UrlParameter.Optional }
             );
         }
