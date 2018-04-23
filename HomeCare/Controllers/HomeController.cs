@@ -9,7 +9,7 @@ namespace HomeCare.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Login()
+        public ActionResult Index()
         {
             DBConnect dbConnect = new DBConnect();
             dbConnect.OpenConnection();
@@ -37,6 +37,11 @@ namespace HomeCare.Controllers
             return View();
         }
 
+        public ActionResult Login()
+        {
+
+            return View();
+        }
 
     }
 }
