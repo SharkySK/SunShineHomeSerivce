@@ -13,7 +13,11 @@ namespace HomeCare
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.MapMvcAttributeRoutes();
-
+            routes.MapRoute(
+                "Admin",
+                "{action}/{id}",
+                defaults: new { controller = "Home", action = "Login", id = UrlParameter.Optional }
+                );
             routes.MapRoute(
                 name: "Default",
                 url: "{action}/{id}",
