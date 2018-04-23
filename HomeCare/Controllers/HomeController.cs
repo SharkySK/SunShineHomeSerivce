@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HomeCare.Database;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,8 @@ namespace HomeCare.Controllers
     {
         public ActionResult Login()
         {
-
+            DBConnect dbConnect = new DBConnect();
+            dbConnect.OpenConnection();
             return View();
         }
         //[HttpGet]
