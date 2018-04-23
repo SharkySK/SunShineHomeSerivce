@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using HomeCare.Database;
 
 namespace HomeCare.Controllers
 {
@@ -11,15 +10,16 @@ namespace HomeCare.Controllers
     {
         public ActionResult Index()
         {
+
             return View();
         }
-        [HttpGet]
-        public JsonResult Test()
-        {  
-            DataClasses1DataContext dataContext = new DataClasses1DataContext();
-            List<User> data = (from p in dataContext.Users select p).ToList();
-            return Json(data, JsonRequestBehavior.AllowGet);
-        }
+        //[HttpGet]
+        //public JsonResult Test()
+        //{  
+            //DataClasses1DataContext dataContext = new DataClasses1DataContext();
+            //List<User> data = (from p in dataContext.Users select p).ToList();
+            //return Json(data, JsonRequestBehavior.AllowGet);
+        //}
 
         public ActionResult About()
         {
