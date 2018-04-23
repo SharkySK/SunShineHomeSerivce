@@ -8,7 +8,7 @@ namespace HomeCare.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Login()
         {
 
             return View();
@@ -35,11 +35,6 @@ namespace HomeCare.Controllers
             return View();
         }
 
-        public ActionResult Login()
-        {
-
-            return View();
-        }
 
     }
 }
