@@ -1,6 +1,46 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Login</h2>
+
+@{
+    var db = Database.Open("database");
+
+    Validation.RequireField("Email", "Required Field - Email");
+    Validation.RequireField("Password", "Required Field - Password");
+
+    string Email = Request.Form["Email"];
+    string Password = Request.Form["Password"];
+
+    if (IsPost && Validation.IsValid())
+    {
+        if (ModelState.IsValid)
+        {
+            var selectQueryString = "SELECT * FROM Members WHERE Email= @0 and Password @1";
+            var result = db.Query(selectQueryString, Email, Password);
+            int count = result.Count();
+            if (count == 1)
+            {
+                Response.Cache.SetNoStore();
+                Response.Cache.SetNoServerCaching();
+
+                foreach (var row in result)
+                {
+                    Session["FirstName"] = row.FirstName;
+                    Session["LastName"] = row.LastName;
+                    Session["Email"] = row.Email;
+                    Session["Telephone"] = row.telephone;
+                }
+                Response.Redirect("~/Home.cshtml");
+            }
+            else
+            {
+                <p>Invalid Username or Password</p>
+                <a href="~/"></a>
+            }
+        }
+    }}
 
